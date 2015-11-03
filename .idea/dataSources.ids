@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="DB" uuid="d5d86128-f83b-4ec2-bbbb-a132b85cec02">
+    <database-info product="HSQL Database Engine" version="2.3.2" jdbc-version="4.0" driver-name="HSQL Database Engine Driver" driver-version="2.3.2">
+      <identifier-quote-string>&quot;</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact"/>
+    <schema name="PUBLIC" catalog="PUBLIC"/>
+    <table name="BUSSDRIVERS" schema="PUBLIC" catalog="PUBLIC" type="TABLE">
+      <column name="BUSSID" sqlType="INTEGER" precision="32" scale="0" nullable="true" jdbcType="4"/>
+      <column name="DRIVERID" sqlType="INTEGER" precision="32" scale="0" nullable="true" jdbcType="4"/>
+      <column name="ID" sqlType="INTEGER" precision="32" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <primary-key name="SYS_PK_10224" columns="ID"/>
+      <foreign-key name="SYS_FK_10174" columns="DRIVERID" ref-table="BUSSES" ref-schema="PUBLIC" ref-catalog="PUBLIC" ref-columns="ID" update-rule="3" delete-rule="3"/>
+      <foreign-key name="SYS_FK_10173" columns="BUSSID" ref-table="DRIVERS" ref-schema="PUBLIC" ref-catalog="PUBLIC" ref-columns="ID" update-rule="3" delete-rule="3"/>
+    </table>
+    <table name="BUSSES" schema="PUBLIC" catalog="PUBLIC" type="TABLE">
+      <column name="ID" sqlType="INTEGER" precision="32" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="BUSS" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="SYS_PK_10124" columns="ID"/>
+    </table>
+    <table name="CUSTOMER" schema="PUBLIC" catalog="PUBLIC" type="TABLE">
+      <column name="ID" sqlType="INTEGER" precision="32" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="CUSTOMER" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="SYS_PK_10279" columns="ID"/>
+    </table>
+    <table name="CUSTOMERORDER" schema="PUBLIC" catalog="PUBLIC" type="TABLE">
+      <column name="CUSTOMERID" sqlType="INTEGER" precision="32" scale="0" nullable="true" jdbcType="4"/>
+      <column name="ORDERID" sqlType="INTEGER" precision="32" scale="0" nullable="true" jdbcType="4"/>
+      <foreign-key name="SYS_FK_10428" columns="ORDERID" ref-table="CUSTOMER" ref-schema="PUBLIC" ref-catalog="PUBLIC" ref-columns="ID" update-rule="3" delete-rule="3"/>
+      <foreign-key name="SYS_FK_10427" columns="CUSTOMERID" ref-table="ORDER" ref-schema="PUBLIC" ref-catalog="PUBLIC" ref-columns="ID" update-rule="3" delete-rule="3"/>
+    </table>
+    <table name="DRIVERS" schema="PUBLIC" catalog="PUBLIC" type="TABLE">
+      <column name="ID" sqlType="INTEGER" precision="32" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="DRIVER" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="SYS_PK_10152" columns="ID"/>
+    </table>
+    <table name="ORDER" schema="PUBLIC" catalog="PUBLIC" type="TABLE">
+      <column name="ID" sqlType="INTEGER" precision="32" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="ORDER" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="SYS_PK_10361" columns="ID"/>
+    </table>
+  </data-source>
+</component>
