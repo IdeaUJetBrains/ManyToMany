@@ -1,4 +1,6 @@
-package dataJoinTable;
+package testdata;
+
+import dataJoinTable.Busses1;
 
 import javax.persistence.*;
 import java.util.Collection;

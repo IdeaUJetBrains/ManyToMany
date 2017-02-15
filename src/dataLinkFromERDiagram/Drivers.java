@@ -53,6 +53,7 @@ public class Drivers {
 
     private Collection<Busses> bussId;
     @ManyToMany
+    @OrderBy("buss desc")
     public Collection<Busses> getBussId() {
         return bussId;
     }
